@@ -1,0 +1,8 @@
+<div class="alert alert-secondary" role="alert" style="padding: 30px;margin: 40px;">
+    <h3>New Item:</h3>
+    <h5>{{parentMessageData}}</h5>
+    <label for="task" ></label>
+    <input type="text"  id="task" name="task"  (keyup)="taskChange($event)">  
+    
+    <button class="btn btn-secondary" style="margin:10px" (click)="onSubmit()">Add Task</button>
+    </div>

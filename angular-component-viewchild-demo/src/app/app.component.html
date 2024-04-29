@@ -4,12 +4,12 @@
       <span class="navbar-brand mb-0 h1">{{title}}</span>
     </nav>
     <div class="alert alert-primary" role="alert" style="padding: 30px;margin: 40px;">
-      <h3>Todo List:</h3>
+      <h3 #childheading>Todo List:</h3>
       
       <ul *ngIf="todos.length>0 ">              
         <ol *ngFor="let todo of todos">
-          <div style="display:auto">
-            <input type="checkbox" value={{todo.complete}} (change)="removeTodo(todo)">  
+          <div [class.complete]="todo.complete">
+            <input type="checkbox"  value={{todo.complete}} (change)="removeTodo(todo)">  
             {{todo.task}}
           </div>
           
@@ -18,7 +18,7 @@
       <p *ngIf="todos.length==0">No Todo Item..</p>
     </div>
     
-    <app-todo [parentMessageData]="parentMessage" (messageEvent)="addTodo(model)"></app-todo>
+    <app-todo [parentMessageData]="parentMessage" [color]="color" (messageEvent)="addTodo(model)"></app-todo>
   </div>
  
 </main>
